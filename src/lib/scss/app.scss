@@ -1,0 +1,72 @@
+body {
+	background-color: $clr-blue-50;
+	color: $clr-text;
+	font-family: $font-body; 
+}
+
+html {
+  scroll-behavior: liquid-smooth;
+}
+
+
+
+.section {
+    margin-top: 15rem;
+}
+h1,
+h2,
+h3,
+h4,
+h5 {
+  font-family: $font-heading;
+  letter-spacing: -4%;
+  font-weight: 400;
+}
+
+
+
+h1 {font-size: $text-h1;}
+h2 {font-size: $text-h2;}
+h3 {font-size: $text-h3;}
+h4 {font-size: $text-h4;}
+h5 {font-size: $text-h5;}
+
+.text-big {font-size: $text-big;}
+.text-body {font-size: $text-body;}
+.text-small {font-size: $text-small;}
+
+@include l {
+  h1 {font-size: $text-h2;}
+  h2 {font-size: $text-h3;}
+  h3 {font-size: $text-h4;}
+  h4 {font-size: $text-h5;}
+  h5 {font-size: $text-big;}
+  
+  .text-big {font-size: $text-body;}
+  .text-body {font-size: $text-small;}
+  .text-small {font-size: 0.6rem;}
+}
+
+
+@include s {
+  h1 {font-size: $text-h3;}
+  h2 {font-size: $text-h4;}
+  h3 {font-size: $text-h5;}
+  h4 {font-size: $text-big;}
+  h5 {font-size: $text-body;}
+  
+  .text-big {font-size: $text-small;}
+  .text-body {font-size: 0.6rem;}
+  .text-small {font-size: 0.5rem;}
+}
+
+.btn {
+  cursor: pointer;
+  transition: all 0.2s ease-out;
+  &:hover{
+    transform: scale(1.02);
+  }
+  &:active{
+    transform: scale(0.95);
+  }
+}
