@@ -4,10 +4,10 @@
 	export let logo;
 
 	const navItems = [
-		{ href: './home', label: 'Home' },
-		{ href: './dienstleistungen', label: 'Dienstleistungen' },
-		{ href: './about', label: 'About' },
-		{ href: './kontakt', label: 'Kontakt' },
+		{ href: './', label: 'Home' },
+		{ href: '#dienstleistungen', label: 'Dienstleistungen' },
+		{ href: '.#warum-wir', label: 'About' },
+		{ href: '.#kontakt', label: 'Kontakt' },
 		{ href: './impressum', label: 'Impressum' }
 	];
 

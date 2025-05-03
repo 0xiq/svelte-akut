@@ -1,14 +1,15 @@
 <script lang="ts">
+	import Countup from 'svelte-countup';
 	const statItems = [
-		{ stat: '1200+', title: 'Fahrten' },
-		{ stat: '1200+', title: 'Fahrten' },
-		{ stat: '1200+', title: 'Fahrten' },
-		{ stat: '1200+', title: 'Fahrten' },
-		{ stat: '1200+', title: 'Fahrten' }
+		{ stat: '1200', title: 'Fahrten' },
+		{ stat: '3000', title: 'Mitarbeiter' },
+		{ stat: '1200', title: 'Pakete' },
+		{ stat: '20', title: 'Jahre Erfahrung' },
+		{ stat: '8000', title: 'zufriedene Kunden' }
 	];
 </script>
 
-<section class="section container">
+<section class="section container" id="warum-wir">
 	<h2>Warum wir?</h2>
 	<div class="flex">
 		<div class="left">
@@ -22,17 +23,19 @@
 				veniam quis. In cupidatat laborum cillum culpa minim ut anim duis. Irure minim sit proident
 				Lorem eiusmod proident consequat pariatur.
 			</p>
-			<a class="btn" href="./about">Mehr erfahren</a>
 		</div>
 		<div class="right">
 			{#each statItems as item}
 				<div class="stats">
-					<h4>{item.stat}</h4>
+					<h4>
+						<Countup value={item.stat} duration={500} />+
+					</h4>
 					<h5>{item.title}</h5>
 				</div>
 			{/each}
 		</div>
 	</div>
+			<a class="btn" href="./about">Mehr erfahren</a>
 </section>
 
 <style lang="scss">
@@ -42,7 +45,12 @@
 
 	.flex {
 		display: flex;
-		justify-content: space-between;
+		justify-content: start;
+		gap: 20rem;
+		@include l {
+			flex-direction: column;
+      gap: 2rem;
+		}
 	}
 
 	.left {
@@ -50,12 +58,7 @@
 			max-width: 40ch;
 			margin-bottom: 2rem;
 		}
-		.btn {
-			padding: 1rem 1.5rem;
-			background-color: $clr-red-500;
-			border-radius: 25px;
 		}
-	}
 
 	.right {
 		.stats {
@@ -68,4 +71,12 @@
 			}
 		}
 	}
+
+
+	.btn {
+			padding: 1rem 1.5rem;
+			background-color: $clr-red-500;
+			border-radius: 25px;
+		}
+
 </style>

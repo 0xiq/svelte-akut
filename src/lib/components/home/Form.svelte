@@ -44,6 +44,7 @@
 
 	<label for="email">Nachricht</label>
 	<input
+    class="message"
 		type="text"
 		name="message"
 		placeholder="Ihre Nachricht an uns"
@@ -52,26 +53,44 @@
 		{...$constraints.message}
 	/>
 	{#if $errors.email}<span class="invalid">{$errors.email}</span>{/if}
-
-	<div><button>Submit</button></div>
+  <p class="text-small">Ihre Daten werden vertraulich behandelt und nur zur Bearbeitung Ihrer Anfrage verwendet.</p>
+	<div><button class="btn">Submit</button></div>
 </form>
 
 <style lang="scss">
 	form {
 		display: flex;
 		flex-direction: column;
-		lable {
+		label {
+      margin-bottom: 0.3rem;
 		}
 		input {
 			background-color: $clr-blue-700;
 			color: $clr-blue-50;
-			border: 1px solid $clr-blue-200;
-			padding: 0.3rem 0.7rem;
+			border: 1.5px solid $clr-blue-200;
+			padding: 0.5rem 0.7rem;
 			border-radius: 10px;
 			margin-bottom: 1rem;
 			&::placeholder {
-				font-size: $text-small;
+        color: $clr-blue-400;
 			}
+      &:focus {
+        outline: none;
+			border: 1.5px solid $clr-blue-50;
+      }
 		}
+    .message {
+      padding: 0.5rem 0.7rem 5rem 0.7rem;
+    }
+    .text-small {
+      color: $clr-blue-200;
+      margin-bottom: 1rem;
+    }
+    button {
+     background-color: $clr-red-500; 
+      border-radius: 10px;
+      width: 100%;
+      padding: 0.75rem;
+    }
 	}
 </style>

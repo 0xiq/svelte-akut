@@ -47,6 +47,10 @@
 		display: flex;
     justify-content: space-between;
     padding: 2rem;
+    @include m {
+      flex-direction: column;
+      gap: 1.5rem;
+    }
 	}
 
 	.left {
